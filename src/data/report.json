@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "brand": "Burger King",
+    "period": "Oct 25 - Nov 13, 2025",
+    "totalMentions": 1850,
+    "riskLevel": "High"
+  },
+  "metrics": {
+    "sentimentScore": 35,
+    "shareOfVoice": 42,
+    "engagementRate": 8.5
+  },
+  "executiveSummary": "Sharp polarity observed. 'SpongeBob' and 'Anime Collab' campaigns drove high positive engagement. However, negative sentiment dominates (60%) driven by geopolitical protests in New Delhi and global boycott calls.",
+  "topicBreakdown": [
+    { "topic": "Political/Boycott", "count": 850, "sentiment": "negative" },
+    { "topic": "SpongeBob Collab", "count": 420, "sentiment": "positive" },
+    { "topic": "Nostalgia/Vintage", "count": 210, "sentiment": "positive" },
+    { "topic": "Customer Experience", "count": 150, "sentiment": "neutral" },
+    { "topic": "Meme/Humor", "count": 120, "sentiment": "positive" }
+  ],
+  "sentimentData": [
+    { "name": "Positive", "value": 30, "color": "#10b981" },
+    { "name": "Neutral", "value": 10, "color": "#64748b" },
+    { "name": "Negative", "value": 60, "color": "#ef4444" }
+  ],
+  "rawPosts": [
+    {
+      "id": 1,
+      "user": "@BurgerKingFan",
+      "text": "Burger King will reportedly launch a SpongeBob Movie collab menu! 🍍🍔 Can't wait to try the Krabby Patty!",
+      "sentiment": "positive",
+      "image": "https://scrapes-cdn.dev1.getadology.ai/search/twitter/Burger%20King/images/34e891969bd0e6779b525afe3187e9763e04c03461ebd733a8c7ee78d641d188.jpg",
+      "topic": "SpongeBob Collab"
+    },
+    {
+      "id": 2,
+      "user": "@ActivistDel",
+      "text": "Protest in New Delhi condemning Burger King's role. We demand accountability! #Boycott",
+      "sentiment": "negative",
+      "image": "https://scrapes-cdn.dev1.getadology.ai/search/twitter/Burger%20King/images/1f825bf6df9449db0bef1cb0afbfe387e1bfb577717138f45f1e8fcd89f9b66a.jpg",
+      "topic": "Political/Boycott"
+    },
+    {
+      "id": 3,
+      "user": "@RetroCollector",
+      "text": "Found this gem: 1987 Burger King All-Pro complete 20-card set, still attached! ⚾️ #Nostalgia",
+      "sentiment": "positive",
+      "image": "https://scrapes-cdn.dev1.getadology.ai/search/twitter/Burger%20King/images/aeb24d057e5838b4cbb498f30ff0fafa6d510b3c5276e4c7b856a97766baea76.jpg",
+      "topic": "Nostalgia/Vintage"
+    },
+    {
+      "id": 4,
+      "user": "@AnimeLover",
+      "text": "JapanEat tried the Burger King x Kagurabachi collab burger. Looks insane! 🔥",
+      "sentiment": "positive",
+      "image": "https://scrapes-cdn.dev1.getadology.ai/search/twitter/Burger%20King/images/ccc206a224f0cceabe9f0dba989da96e7a21b2ce586ded5d8dbf3c1a752dec00.jpg",
+      "topic": "SpongeBob Collab"
+    },
+    {
+      "id": 5,
+      "user": "@AngryUser",
+      "text": "BOYCOTT BURGER KING! Stop funding the conflict. #FreePalestine",
+      "sentiment": "negative",
+      "image": "https://scrapes-cdn.dev1.getadology.ai/search/twitter/Burger%20King/images/e66548b0712856e57f8ee53b8813ccf214a47c7175bfd5f1e2767032d4547172.jpg",
+      "topic": "Political/Boycott"
+    }
+  ]
+}
