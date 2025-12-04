@@ -1,27 +1,27 @@
 {
   "metadata": {
     "brand": "Spectral",
-    "period": "November 20, 2025 - December 3, 2025",
-    "totalMentions": 72,
+    "period": "2025-11-20 to 2025-12-03",
+    "totalMentions": 73,
     "riskLevel": "Low"
   },
   "metrics": {
-    "sentimentScore": 18,
+    "sentimentScore": 48,
     "shareOfVoice": 15,
-    "engagementRate": 4
+    "engagementRate": 4.1
   },
-  "executiveSummary": "The term 'Spectral' exhibits a predominantly neutral sentiment, with conversations driven by technical/scientific research and digital art. The overall risk level is low, as positive product discussions and announcements outweigh a small but notable volume of negative posts related to misinformation and hate speech.",
+  "executiveSummary": "Analysis of the term 'Spectral' reveals a predominantly neutral conversation, centered on technical topics like AI, computer graphics, and scientific research. Positive sentiment is driven by specific product announcements and media praise, while a small segment of negative mentions includes conspiracy theories, user complaints, and hate speech. The overall risk level is low, with sentiment nearly balanced between positive and negative drivers.",
   "topicBreakdown": [
-    { "topic": "Technical/AI Research", "count": 20, "sentiment": "neutral" },
-    { "topic": "Digital Art & Creativity", "count": 15, "sentiment": "neutral" },
-    { "topic": "Product Discussion", "count": 10, "sentiment": "positive" },
-    { "topic": "Hate Speech/Controversial", "count": 8, "sentiment": "negative" },
-    { "topic": "Entertainment (Film, Gaming, etc.)", "count": 8, "sentiment": "positive" }
+    { "topic": "AI & Computer Graphics", "count": 15, "sentiment": "neutral" },
+    { "topic": "Art & Creative Projects", "count": 12, "sentiment": "neutral" },
+    { "topic": "Memes & Humor", "count": 11, "sentiment": "neutral" },
+    { "topic": "Negative/Hate Speech", "count": 9, "sentiment": "negative" },
+    { "topic": "Product & Brand Praise", "count": 7, "sentiment": "positive" }
   ],
   "sentimentData": [
-    { "name": "Positive", "value": 13, "color": "#10b981" },
-    { "name": "Neutral", "value": 43, "color": "#64748b" },
-    { "name": "Negative", "value": 16, "color": "#ef4444" }
+    { "name": "Positive", "value": 10, "color": "#10b981" },
+    { "name": "Neutral", "value": 52, "color": "#64748b" },
+    { "name": "Negative", "value": 11, "color": "#ef4444" }
   ],
   "rawPosts": [
     {
@@ -30,50 +30,38 @@
       "text": "I’ve done it twin. I’ve turned us into spectral deer. Twin run they are hunting us twin. https://t.co/3NjYl09zbD",
       "sentiment": "neutral",
       "image": "https://scrapes.dev2.getadology.ai/search/twitter/Spectral/images/889a5d2e6b74f800b4a8c9e9a3528e51fde8d5af7d8fa2bd57e93315f99c41cc.jpg",
-      "topic": "Digital Art & Creativity"
+      "topic": "Memes & Humor"
     },
     {
     "id": 2,
       "user": "Twitter User",
-      "text": "After years of research & experiments, OctaneRender 2027 is achieving real-time path tracing while remaining its quality and spectral nature. I am extremely proud of my team all across the globe for this achievement!🔥 #Octane https://t.co/r5wWtdUwhd",
+      "text": "After years of research &amp; experiments, OctaneRender 2027 is achieving real-time path tracing while remaining its quality and spectral nature. I am extremely proud of my team all across the globe for this achievement!🔥 #Octane https://t.co/r5wWtdUwhd",
       "sentiment": "positive",
       "image": "https://scrapes.dev2.getadology.ai/search/twitter/Spectral/videos/0e06be5e647ef0187003d56f284992817890e3235f644f8a579520b5080f5faa.mp4",
-      "topic": "Technical/AI Research"
+      "topic": "AI & Computer Graphics"
     },
     {
       "id": 3,
       "user": "Twitter User",
-      "text": "🚨 3I/ATLAS: NASA LIED!
-
-NASA just got EXPOSED hiding crystal-clear color + thermal shots of interstellar object 3I/ATLAS.
-
-They dropped a TERRIBLE blurry gray potato photo, like we was stupid...
-
-The actual files they published prove they got PERFECT high-res multi-spectral data… then deliberately buried it.
-
-ALL EVIDENCE IS IN THE METADATA! 
-
-Why the cover-up...?
-
- #3IATLAS #3IAtlasExposed #Space #UFOx",
+      "text": "🚨 3I/ATLAS: NASA LIED! NASA just got EXPOSED hiding crystal-clear color + thermal shots of interstellar object 3I/ATLAS. They dropped a TERRIBLE blurry gray potato photo, like we was stupid... The actual files they published prove they got PERFECT high-res multi-spectral data… then deliberately buried it. ALL EVIDENCE IS IN THE METADATA!  Why the cover-up...?  #3IATLAS #3IAtlasExposed #Space #UFOx",
       "sentiment": "negative",
       "image": "https://scrapes.dev2.getadology.ai/search/twitter/Spectral/images/ee53ede0af7daf0c5044be306cb6b21a3c5a44db6be8db1a0af7f394d553dffa.jpg",
-      "topic": "Conspiracy & Misinformation"    },
+      "topic": "Negative/Hate Speech"    },
     {
      "id": 4,
       "user": "Twitter User",
       "text": "Spectral is a top-notch movie. 🎥 https://t.co/JCuBIPc3Vi",
       "sentiment": "positive",
       "image": "https://scrapes.dev2.getadology.ai/search/twitter/Spectral/videos/b6b78987c0e1fa014751670405a02e2361b7ed77b73977d70281ddc6422f077c.mp4",
-      "topic": "Entertainment (Film)"
+      "topic": "Product & Brand Praise"
     },
     {
     "id": 5,
       "user": "Twitter User",
-      "text": "After nearly three years on my entry-level bike, I was finally able to upgrade to a Canyon Spectral 6 Raw’kn’Roll. Thank you, 𝕏—@X this wouldn’t have been possible without this incredible platform. https://t.co/mljY8HCaKL",
-      "sentiment": "positive",
-      "image": "https://scrapes.dev2.getadology.ai/search/twitter/Spectral/videos/4b6090793b77b5c3876ae7468f7627173c1fb4fc696f6d63eecc6c273fa81024.mp4",
-      "topic": "Product Discussion"
+      "text": "@TeamYouTube @TeamYouTube so why is this allowed?? this youtube channel Spectral Paranormal is openly bragging about using your copyright strike system to teach "lessons" against another channel Beardo Gets Scared by filing malicious strikes. https://t.co/6L7ossIXXz",
+      "sentiment": "negative",
+      "image": "https://scrapes.dev2.getadology.ai/search/twitter/Spectral/images/482c419f0b2e6bc3adc8b477b41322f36fbc347fd28a7ba94f6d870fa39765ed.jpg",
+      "topic": "Negative/Hate Speech"
     }
   ]
 }
