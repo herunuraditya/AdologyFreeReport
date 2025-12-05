@@ -3,287 +3,264 @@
 import React, { useState } from 'react';
 import { 
   PieChart, Pie, Cell, Tooltip, ResponsiveContainer, 
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend 
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend,
+  Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
+  ScatterChart, Scatter, ZAxis
 } from 'recharts';
 import { 
-  TrendingUp, AlertTriangle, MessageCircle, 
-  Filter, ExternalLink, ShieldAlert, Activity 
+  Activity, MessageCircle, Mic2, Layers, 
+  BarChart3, BrainCircuit, ExternalLink, Filter
 } from 'lucide-react';
 import reportData from '@/data/report.json';
 
 // --- TYPES ---
-type SentimentType = 'positive' | 'negative' | 'neutral' | 'all';
+type TabType = 'overview' | 'positioning' | 'voice' | 'complexity' | 'feed';
 
 export default function MarketingDashboard() {
-  const [filterSentiment, setFilterSentiment] = useState<SentimentType>('all');
+  const [activeTab, setActiveTab] = useState<TabType>('overview');
+  const [filterSentiment, setFilterSentiment] = useState('all');
   
-  // Destructure data
-  const { metadata, metrics, executiveSummary, topicBreakdown, sentimentData, rawPosts } = reportData;
+  // Destructure data (termasuk data baru yang kita tambahkan di JSON)
+  const { 
+    metadata, metrics, executiveSummary, topicBreakdown, 
+    sentimentData, rawPosts, positioningAnalysis, voiceAnalysis, complexityAnalysis 
+  } = reportData as any; // Cast as any untuk handle field baru tanpa strict interface update
 
-  // Logic Filter Feed
-  const filteredPosts = filterSentiment === 'all' 
-    ? rawPosts 
-    : rawPosts.filter(post => post.sentiment === filterSentiment);
-
-  // Helper: Color Badge
-  const getSentimentBadge = (sentiment: string) => {
-    if (sentiment === 'positive') return 'bg-emerald-100 text-emerald-700 border-emerald-200';
-    if (sentiment === 'negative') return 'bg-red-100 text-red-700 border-red-200';
-    return 'bg-slate-100 text-slate-600 border-slate-200';
-  };
+  // Helper: Nav Button
+  const NavButton = ({ id, label, icon: Icon }: { id: TabType, label: string, icon: any }) => (
+    <button
+      onClick={() => setActiveTab(id)}
+      className={`flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 transition-colors ${
+        activeTab === id 
+          ? 'border-blue-600 text-blue-600' 
+          : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'
+      }`}
+    >
+      <Icon size={18} />
+      {label}
+    </button>
+  );
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans pb-20">
       
-      {/* --- NAVBAR --- */}
+      {/* --- HEADER --- */}
       <nav className="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center text-white font-bold shadow-md">
-              BK
+            <div className="w-10 h-10 bg-gradient-to-br from-violet-600 to-indigo-600 rounded-lg flex items-center justify-center text-white font-bold shadow-md">
+              SP
             </div>
             <div>
-              <h1 className="font-bold text-lg leading-tight">Brand Pulse</h1>
-              <p className="text-xs text-slate-500">Marketing Intelligence Dashboard</p>
+              <h1 className="font-bold text-lg leading-tight">{metadata.brand} Analytics</h1>
+              <p className="text-xs text-slate-500">Multitab Strategy Dashboard</p>
             </div>
           </div>
-          <div className="hidden md:flex items-center gap-4 text-sm">
-            <div className="px-3 py-1 bg-slate-100 rounded-full border border-slate-200 text-slate-600 font-medium">
-              📅 {metadata.period}
-            </div>
+          <div className="text-sm font-medium bg-slate-100 px-3 py-1 rounded-full text-slate-600">
+            {metadata.period}
+          </div>
+        </div>
+
+        {/* --- TAB NAVIGATION --- */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex space-x-2 overflow-x-auto no-scrollbar">
+            <NavButton id="overview" label="Overview" icon={Activity} />
+            <NavButton id="positioning" label="Positioning" icon={BarChart3} />
+            <NavButton id="voice" label="Voice & Tone" icon={Mic2} />
+            <NavButton id="complexity" label="Complexity" icon={BrainCircuit} />
+            <NavButton id="feed" label="Live Feed" icon={MessageCircle} />
           </div>
         </div>
       </nav>
 
-      {/* --- MAIN CONTENT --- */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
-
-        {/* 1. EXECUTIVE SUMMARY & RISK (Grid Layout) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          
-          {/* Summary Card */}
-          <div className="lg:col-span-8 bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="p-2 bg-blue-50 rounded-lg text-blue-600">
-                <TrendingUp size={20} />
+      {/* --- MAIN CONTENT AREA --- */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        {/* TAB: OVERVIEW */}
+        {activeTab === 'overview' && (
+          <div className="space-y-6">
+            {/* Executive Summary */}
+            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+              <h2 className="text-lg font-bold mb-4 text-slate-800">Executive Insight</h2>
+              <p className="text-slate-600 leading-relaxed text-lg">{executiveSummary}</p>
+              
+              <div className="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-slate-100">
+                <div>
+                  <p className="text-xs text-slate-400 font-semibold uppercase">Total Mentions</p>
+                  <p className="text-2xl font-bold text-slate-900">{metadata.totalMentions}</p>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-400 font-semibold uppercase">Risk Level</p>
+                  <p className={`text-2xl font-bold ${metadata.riskLevel === 'Low' ? 'text-emerald-600' : 'text-red-600'}`}>
+                    {metadata.riskLevel}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-400 font-semibold uppercase">Engagement</p>
+                  <p className="text-2xl font-bold text-blue-600">{metrics.engagementRate}%</p>
+                </div>
               </div>
-              <h2 className="text-lg font-bold text-slate-800">Executive Insight</h2>
             </div>
-            <p className="text-slate-600 leading-relaxed text-lg">
-              {executiveSummary}
-            </p>
-            
-            {/* Mini Metrics */}
-            <div className="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-slate-100">
-              <div>
-                <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Total Mentions</p>
-                <p className="text-2xl font-bold text-slate-800">{metadata.totalMentions.toLocaleString()}</p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Sentiment Pie */}
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm h-[350px]">
+                <h3 className="font-bold text-slate-700 mb-4">Sentiment Distribution</h3>
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie 
+                      data={sentimentData} innerRadius={60} outerRadius={80} 
+                      paddingAngle={5} dataKey="value"
+                    >
+                      {sentimentData.map((entry: any, index: number) => (
+                        <Cell key={`cell-${index}`} fill={entry.color} />
+                      ))}
+                    </Pie>
+                    <Tooltip />
+                    <Legend verticalAlign="bottom" height={36}/>
+                  </PieChart>
+                </ResponsiveContainer>
               </div>
-              <div>
-                <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Engagement Rate</p>
-                <p className="text-2xl font-bold text-slate-800">{metrics.engagementRate}%</p>
-              </div>
-              <div>
-                <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Sentiment Score</p>
-                <p className="text-2xl font-bold text-slate-800">{metrics.sentimentScore}</p>
+
+              {/* Topic Breakdown Bar */}
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm h-[350px]">
+                <h3 className="font-bold text-slate-700 mb-4">Topic Breakdown</h3>
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart layout="vertical" data={topicBreakdown} margin={{ left: 40 }}>
+                    <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false}/>
+                    <XAxis type="number" hide />
+                    <YAxis dataKey="topic" type="category" width={100} tick={{fontSize: 10}} />
+                    <Tooltip cursor={{fill: 'transparent'}} />
+                    <Bar dataKey="count" fill="#475569" radius={[0, 4, 4, 0]}>
+                      {topicBreakdown.map((entry: any, index: number) => (
+                        <Cell key={`cell-${index}`} fill={entry.sentiment === 'positive' ? '#10b981' : entry.sentiment === 'negative' ? '#ef4444' : '#94a3b8'} />
+                      ))}
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
               </div>
             </div>
           </div>
+        )}
 
-          {/* Risk Meter */}
-          <div className={`lg:col-span-4 rounded-2xl p-6 border shadow-sm flex flex-col justify-center relative overflow-hidden
-            ${metadata.riskLevel === 'High' ? 'bg-red-50 border-red-200' : 'bg-green-50 border-green-200'}`}>
+        {/* TAB: POSITIONING */}
+        {activeTab === 'positioning' && (
+          <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+            <h2 className="text-xl font-bold mb-2">Positioning Strategy</h2>
+            <p className="text-slate-500 mb-8">How the brand's positioning correlates with emotional tone.</p>
             
-            <div className="absolute -right-4 -top-4 opacity-10">
-              <ShieldAlert size={120} className={metadata.riskLevel === 'High' ? 'text-red-600' : 'text-green-600'} />
-            </div>
-
-            <div className="flex items-center gap-2 mb-1">
-              <Activity size={18} className={metadata.riskLevel === 'High' ? 'text-red-600' : 'text-green-600'} />
-              <h3 className={`text-sm font-bold uppercase tracking-wider ${metadata.riskLevel === 'High' ? 'text-red-700' : 'text-green-700'}`}>
-                Crisis Monitor
-              </h3>
-            </div>
-            
-            <div className={`text-4xl font-black mb-2 ${metadata.riskLevel === 'High' ? 'text-red-600' : 'text-green-600'}`}>
-              {metadata.riskLevel} Risk
-            </div>
-            
-            <p className={`text-sm leading-snug ${metadata.riskLevel === 'High' ? 'text-red-800' : 'text-green-800'}`}>
-              {metadata.riskLevel === 'High' 
-                ? "Spike in global boycott activity and geopolitical issues detected. Immediate 24h monitoring recommended."
-                : "Brand sentiment is stable. Standard monitoring protocols apply."}
-            </p>
-          </div>
-        </div>
-
-        {/* 2. CHARTS SECTION */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          
-          {/* Sentiment Chart */}
-          <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
-            <div className="flex justify-between items-center mb-6">
-              <h3 className="font-bold text-slate-800">Sentiment Distribution</h3>
-              <span className="text-xs bg-slate-100 text-slate-500 px-2 py-1 rounded">Interactive</span>
-            </div>
-            
-            <div className="h-[300px] w-full">
+            <div className="h-[400px]">
               <ResponsiveContainer width="100%" height="100%">
-                <PieChart>
-                  <Pie
-                    data={sentimentData}
-                    innerRadius={60}
-                    outerRadius={80}
-                    paddingAngle={5}
-                    dataKey="value"
-                    cursor="pointer"
-                    onClick={(data) => {
-                      const sentiment = data.name === 'Positive' ? 'positive' : data.name === 'Negative' ? 'negative' : 'neutral';
-                      setFilterSentiment(sentiment === filterSentiment ? 'all' : sentiment);
-                    }}
-                  >
-                    {sentimentData.map((entry: any, index: number) => (
-                      <Cell 
-                        key={`cell-${index}`} 
-                        fill={entry.color} 
-                        strokeWidth={filterSentiment === (entry.name === 'Positive' ? 'positive' : entry.name === 'Negative' ? 'negative' : 'neutral') ? 4 : 0}
-                        stroke="#000"
-                      />
-                    ))}
-                  </Pie>
-                  <Tooltip contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} />
-                  <Legend verticalAlign="bottom" height={36}/>
-                </PieChart>
-              </ResponsiveContainer>
-            </div>
-            <p className="text-center text-xs text-slate-400 mt-2">Click chart slice to filter posts below</p>
-          </div>
-
-          {/* Topic Chart */}
-          <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
-            <h3 className="font-bold text-slate-800 mb-6">Topic Breakdown</h3>
-            
-            <div className="h-[300px] w-full">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart
-                  layout="vertical"
-                  data={topicBreakdown}
-                  margin={{ top: 5, right: 30, left: 60, bottom: 5 }}
-                >
-                  <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false} stroke="#f1f5f9"/>
-                  <XAxis type="number" hide />
-                  <YAxis 
-                    dataKey="topic" 
-                    type="category" 
-                    width={120} 
-                    tick={{fontSize: 11, fill: '#64748b'}} 
-                  />
-                  <Tooltip 
-                    cursor={{fill: '#f8fafc'}} 
-                    contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }} 
-                  />
-                  <Bar dataKey="count" radius={[0, 4, 4, 0]}>
-                    {topicBreakdown.map((entry: any, index: number) => (
-                        <Cell key={`cell-${index}`} fill={entry.sentiment === 'negative' ? '#ef4444' : entry.sentiment === 'positive' ? '#10b981' : '#94a3b8'} />
+                <BarChart data={positioningAnalysis}>
+                  <CartesianGrid strokeDasharray="3 3" vertical={false} />
+                  <XAxis dataKey="category" tick={{fontSize: 12, fontWeight: 500}} />
+                  <YAxis />
+                  <Tooltip cursor={{fill: '#f8fafc'}} />
+                  <Bar dataKey="value" radius={[4, 4, 0, 0]}>
+                    {positioningAnalysis?.map((entry: any, index: number) => (
+                      <Cell key={`cell-${index}`} fill={entry.color} />
                     ))}
                   </Bar>
                 </BarChart>
               </ResponsiveContainer>
             </div>
           </div>
-        </div>
+        )}
 
-        {/* 3. LIVE FEED & VISUAL GALLERY */}
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-          
-          {/* Filter Header */}
-          <div className="p-6 border-b border-slate-100 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-slate-50/50">
-            <div>
-              <h3 className="font-bold text-lg flex items-center gap-2 text-slate-800">
-                <MessageCircle size={20} className="text-blue-500"/>
-                Live Feed & Visuals
-              </h3>
-              <p className="text-sm text-slate-500">Real-time data from social platforms</p>
+        {/* TAB: VOICE (RADAR CHART) */}
+        {activeTab === 'voice' && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+              <h2 className="text-xl font-bold mb-6">Voice Profile (Radar)</h2>
+              <div className="h-[350px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <RadarChart cx="50%" cy="50%" outerRadius="80%" data={voiceAnalysis}>
+                    <PolarGrid />
+                    <PolarAngleAxis dataKey="attribute" tick={{ fontSize: 12, fontWeight: 'bold' }} />
+                    <PolarRadiusAxis angle={30} domain={[0, 100]} />
+                    <Radar name="Brand Voice" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+                    <Tooltip />
+                  </RadarChart>
+                </ResponsiveContainer>
+              </div>
             </div>
-            
-            <div className="flex gap-2">
-              <button 
-                onClick={() => setFilterSentiment('all')}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${filterSentiment === 'all' ? 'bg-slate-900 text-white' : 'bg-white text-slate-600 border hover:bg-slate-50'}`}
-              >
-                All
-              </button>
-              <button 
-                onClick={() => setFilterSentiment('negative')}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${filterSentiment === 'negative' ? 'bg-red-600 text-white' : 'bg-white text-slate-600 border hover:bg-red-50'}`}
-              >
-                Risks
-              </button>
-              <button 
-                onClick={() => setFilterSentiment('positive')}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${filterSentiment === 'positive' ? 'bg-emerald-600 text-white' : 'bg-white text-slate-600 border hover:bg-emerald-50'}`}
-              >
-                Wins
-              </button>
+            <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm flex flex-col justify-center">
+              <h3 className="font-bold text-lg mb-4">Voice Insights</h3>
+              <ul className="space-y-4">
+                {voiceAnalysis?.map((item: any, i: number) => (
+                  <li key={i} className="flex justify-between items-center border-b border-slate-100 pb-2">
+                    <span className="text-slate-600">{item.attribute}</span>
+                    <div className="w-32 bg-slate-100 h-2 rounded-full overflow-hidden">
+                      <div className="h-full bg-violet-500" style={{width: `${item.A}%`}}></div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
+        )}
 
-          {/* Masonry-like Grid Layout for Posts */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-slate-50">
-            {filteredPosts.map((post: any) => (
-              <div key={post.id} className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 flex flex-col">
-                
-                {/* Image Area */}
-                <div className="relative w-full h-48 bg-slate-100 overflow-hidden group">
-                  <img 
-                    src={post.image} 
-                    alt="Post content" 
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-2 right-2">
-                    <span className={`text-[10px] font-bold uppercase px-2 py-1 rounded-full border shadow-sm ${getSentimentBadge(post.sentiment)}`}>
+        {/* TAB: COMPLEXITY (SCATTER PLOT) */}
+        {activeTab === 'complexity' && (
+          <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+             <h2 className="text-xl font-bold mb-2">Complexity Analysis</h2>
+             <p className="text-slate-500 mb-8">Message Complexity (Y) vs. Usage Frequency (X)</p>
+             
+             <div className="h-[400px]">
+               <ResponsiveContainer width="100%" height="100%">
+                 <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+                   <CartesianGrid />
+                   <XAxis type="number" dataKey="frequency" name="Frequency" unit="%" />
+                   <YAxis type="number" dataKey="complexity" name="Complexity" unit="%" />
+                   <ZAxis type="number" dataKey="z" range={[100, 500]} name="Volume" />
+                   <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+                   <Scatter name="Topics" data={complexityAnalysis} fill="#8884d8">
+                    {complexityAnalysis?.map((entry: any, index: number) => (
+                      <Cell key={`cell-${index}`} fill={['#ef4444', '#f59e0b', '#10b981', '#3b82f6'][index % 4]} />
+                    ))}
+                   </Scatter>
+                   <Legend />
+                 </ScatterChart>
+               </ResponsiveContainer>
+             </div>
+          </div>
+        )}
+
+        {/* TAB: LIVE FEED */}
+        {activeTab === 'feed' && (
+          <div className="space-y-6">
+            <div className="flex gap-2 mb-4">
+              <button onClick={() => setFilterSentiment('all')} className={`px-4 py-2 rounded-lg text-sm font-medium ${filterSentiment === 'all' ? 'bg-slate-800 text-white' : 'bg-white border'}`}>All</button>
+              <button onClick={() => setFilterSentiment('negative')} className={`px-4 py-2 rounded-lg text-sm font-medium ${filterSentiment === 'negative' ? 'bg-red-600 text-white' : 'bg-white border'}`}>Risks</button>
+              <button onClick={() => setFilterSentiment('positive')} className={`px-4 py-2 rounded-lg text-sm font-medium ${filterSentiment === 'positive' ? 'bg-emerald-600 text-white' : 'bg-white border'}`}>Wins</button>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {rawPosts
+                .filter((p: any) => filterSentiment === 'all' || p.sentiment === filterSentiment)
+                .map((post: any) => (
+                <div key={post.id} className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition-all">
+                  <div className="h-48 bg-slate-100 relative overflow-hidden">
+                    <img src={post.image} alt="content" className="w-full h-full object-cover" />
+                    <span className={`absolute top-2 right-2 px-2 py-1 text-[10px] uppercase font-bold rounded bg-white/90 shadow-sm
+                      ${post.sentiment === 'positive' ? 'text-emerald-600' : post.sentiment === 'negative' ? 'text-red-600' : 'text-slate-600'}
+                    `}>
                       {post.sentiment}
                     </span>
                   </div>
-                </div>
-
-                {/* Content Area */}
-                <div className="p-4 flex-1 flex flex-col">
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-500">
-                      {post.user.substring(1, 3).toUpperCase()}
-                    </div>
-                    <div>
-                      <p className="text-sm font-bold text-slate-900 leading-none">{post.user}</p>
-                      <p className="text-[10px] text-slate-400 mt-0.5 font-medium uppercase">{post.topic}</p>
+                  <div className="p-4">
+                    <p className="text-xs font-bold text-slate-400 uppercase mb-1">{post.topic}</p>
+                    <p className="text-sm text-slate-800 line-clamp-3">"{post.text}"</p>
+                    <div className="mt-4 pt-3 border-t flex justify-between items-center">
+                      <span className="text-xs font-bold text-slate-700">{post.user}</span>
+                      <ExternalLink size={14} className="text-blue-500"/>
                     </div>
                   </div>
-
-                  <p className="text-slate-600 text-sm leading-relaxed mb-4 flex-1">
-                    "{post.text}"
-                  </p>
-                  
-                  <div className="pt-3 border-t border-slate-50 mt-auto">
-                    <button className="text-xs text-blue-600 font-semibold flex items-center gap-1 hover:text-blue-700 transition-colors">
-                      View Source <ExternalLink size={10}/>
-                    </button>
-                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-          
-          {/* Empty State */}
-          {filteredPosts.length === 0 && (
-            <div className="p-16 text-center flex flex-col items-center justify-center text-slate-400">
-              <div className="bg-slate-100 p-4 rounded-full mb-4">
-                <Filter size={32} className="text-slate-300"/>
-              </div>
-              <p className="font-medium">No posts found for this filter.</p>
-              <button onClick={() => setFilterSentiment('all')} className="text-blue-600 text-sm mt-2 font-medium hover:underline">Clear filters</button>
+              ))}
             </div>
-          )}
-        </div>
+          </div>
+        )}
 
       </main>
     </div>
