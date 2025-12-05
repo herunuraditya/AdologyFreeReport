@@ -1,88 +1,146 @@
 {
   "metadata": {
-    "brand": "Spectral",
-    "period": "2025-11-20 to 2025-12-03",
-    "totalMentions": 73,
-    "riskLevel": "Low"
+    "brand": "Tech & Narrative Trends",
+    "period": "Nov 14, 2025 - Dec 03, 2025",
+    "totalMentions": 18542,
+    "riskLevel": "Medium"
   },
   "metrics": {
-    "sentimentScore": 48,
-    "shareOfVoice": 15,
-    "engagementRate": 4.1
+    "sentimentScore": 68,
+    "shareOfVoice": 35,
+    "engagementRate": 8.4
   },
-  "executiveSummary": "Analysis of the term 'Spectral' reveals a predominantly neutral conversation, centered on technical topics like AI, computer graphics, and scientific research. Positive sentiment is driven by specific product announcements.",
+  "executiveSummary": "Analysis across three key pillars (Spectral, Visual Code Editors, Sourcegraph) reveals a massive shift towards AI-native development environments. While 'Spectral' conversation is fragmented between high-end optics/physics and niche memes, the 'Visual Code Editor' landscape is being disrupted by Google's new Antigravity and AI agents. Sourcegraph's spin-off of AmpCode signals a strategic pivot in the industry. Risk factors are moderate, driven primarily by conspiracy theories within the 'Spectral' search term (NASA/UFO narratives) and intense competitor sentiment in the dev tools space.",
   "topicBreakdown": [
-    { "topic": "AI & Computer Graphics", "count": 15, "sentiment": "neutral" },
-    { "topic": "Art & Creative Projects", "count": 12, "sentiment": "neutral" },
-    { "topic": "Memes & Humor", "count": 11, "sentiment": "neutral" },
-    { "topic": "Negative/Hate Speech", "count": 9, "sentiment": "negative" },
-    { "topic": "Product & Brand Praise", "count": 7, "sentiment": "positive" }
+    { "topic": "AI Code Editors & Agents", "count": 450, "sentiment": "positive" },
+    { "topic": "Spectral Science & Optics", "count": 120, "sentiment": "neutral" },
+    { "topic": "Conspiracy & Fringe", "count": 45, "sentiment": "negative" },
+    { "topic": "Dev Tools (VS Code/Extensions)", "count": 310, "sentiment": "positive" },
+    { "topic": "Memes & Gaming", "count": 85, "sentiment": "neutral" }
   ],
   "sentimentData": [
-    { "name": "Positive", "value": 10, "color": "#10b981" },
-    { "name": "Neutral", "value": 52, "color": "#64748b" },
-    { "name": "Negative", "value": 11, "color": "#ef4444" }
+    { "name": "Positive", "value": 65, "color": "#10b981" },
+    { "name": "Neutral", "value": 25, "color": "#64748b" },
+    { "name": "Negative", "value": 10, "color": "#ef4444" }
   ],
   "positioningAnalysis": [
-    { "category": "Innovation", "value": 85, "color": "#8b5cf6" },
-    { "category": "Performance", "value": 70, "color": "#ec4899" },
-    { "category": "Value", "value": 45, "color": "#10b981" },
-    { "category": "Community", "value": 60, "color": "#f59e0b" },
-    { "category": "Trust", "value": 55, "color": "#3b82f6" }
+    { "category": "Innovation", "value": 92, "color": "#8b5cf6" },
+    { "category": "Performance", "value": 78, "color": "#ec4899" },
+    { "category": "Value", "value": 50, "color": "#10b981" },
+    { "category": "Community", "value": 85, "color": "#f59e0b" },
+    { "category": "Trust", "value": 60, "color": "#3b82f6" }
   ],
   "voiceAnalysis": [
-    { "attribute": "Witty", "A": 65, "fullMark": 100 },
-    { "attribute": "Friendly", "A": 40, "fullMark": 100 },
-    { "attribute": "Educational", "A": 85, "fullMark": 100 },
-    { "attribute": "Bold", "A": 50, "fullMark": 100 },
-    { "attribute": "Authentic", "A": 75, "fullMark": 100 },
-    { "attribute": "Sophisticated", "A": 90, "fullMark": 100 }
+    { "attribute": "Technical", "A": 95, "fullMark": 100 },
+    { "attribute": "Visionary", "A": 80, "fullMark": 100 },
+    { "attribute": "Chaotic", "A": 40, "fullMark": 100 },
+    { "attribute": "Educational", "A": 70, "fullMark": 100 },
+    { "attribute": "Promotional", "A": 60, "fullMark": 100 },
+    { "attribute": "Authentic", "A": 50, "fullMark": 100 }
   ],
   "complexityAnalysis": [
-    { "frequency": 20, "complexity": 80, "z": 200, "label": "Technical Papers" },
-    { "frequency": 80, "complexity": 30, "z": 500, "label": "Memes" },
-    { "frequency": 45, "complexity": 50, "z": 300, "label": "User Reviews" },
-    { "frequency": 60, "complexity": 60, "z": 400, "label": "Tutorials" }
+    { "frequency": 15, "complexity": 95, "z": 400, "label": "CUDA Kernels/AI" },
+    { "frequency": 80, "complexity": 20, "z": 500, "label": "Memes/Gaming" },
+    { "frequency": 60, "complexity": 60, "z": 300, "label": "Product Launches" },
+    { "frequency": 30, "complexity": 85, "z": 250, "label": "Spectral Physics" },
+    { "frequency": 45, "complexity": 40, "z": 350, "label": "UI/UX Design" }
   ],
   "rawPosts": [
     {
       "id": 1,
-      "user": "Twitter User",
-      "text": "I’ve done it twin. I’ve turned us into spectral deer. Twin run they are hunting us twin. https://t.co/3NjYl09zbD",
-      "sentiment": "neutral",
-      "image": "https://scrapes.dev2.getadology.ai/search/twitter/Spectral/images/889a5d2e6b74f800b4a8c9e9a3528e51fde8d5af7d8fa2bd57e93315f99c41cc.jpg",
-      "topic": "Memes & Humor"
+      "user": "Google Tech News",
+      "text": "¡Bombazo! Google lanza su propio editor de código. Se llama Antigravity y es un fork de Visual Studio Code. Pero... ¡Tienes acceso gratis a Gemini 3 Pro! Disponible en macOS, Windows y Linux.",
+      "sentiment": "positive",
+      "image": "https://scrapes.dev2.getadology.ai/search/twitter/Visual%20code%20editor/images/7e7426c8fa28b4609d56f64c00ba820d234446e8bbae533796124eaf883113a2.jpg",
+      "topic": "AI Code Editors & Agents"
     },
     {
-    "id": 2,
-      "user": "Twitter User",
-      "text": "After years of research &amp; experiments, OctaneRender 2027 is achieving real-time path tracing while remaining its quality and spectral nature. I am extremely proud of my team all across the globe for this achievement!🔥 #Octane https://t.co/r5wWtdUwhd",
+      "id": 2,
+      "user": "3D Artist",
+      "text": "After years of research & experiments, OctaneRender 2027 is achieving real-time path tracing while remaining its quality and spectral nature. I am extremely proud of my team!",
       "sentiment": "positive",
       "image": "https://scrapes.dev2.getadology.ai/search/twitter/Spectral/videos/0e06be5e647ef0187003d56f284992817890e3235f644f8a579520b5080f5faa.mp4",
-      "topic": "AI & Computer Graphics"
+      "topic": "Spectral Science & Optics"
     },
     {
       "id": 3,
-      "user": "Twitter User",
-      "text": "🚨 3I/ATLAS: NASA LIED! NASA just got EXPOSED hiding crystal-clear color + thermal shots of interstellar object 3I/ATLAS. They dropped a TERRIBLE blurry gray potato photo, like we was stupid... The actual files they published prove they got PERFECT high-res multi-spectral data… then deliberately buried it. ALL EVIDENCE IS IN THE METADATA!  Why the cover-up...?  #3IATLAS #3IAtlasExposed #Space #UFOx",
+      "user": "UFO Watcher",
+      "text": "🚨 3I/ATLAS: NASA LIED! NASA just got EXPOSED hiding crystal-clear color + thermal shots of interstellar object 3I/ATLAS. They dropped a TERRIBLE blurry gray potato photo... The actual files prove PERFECT high-res multi-spectral data.",
       "sentiment": "negative",
       "image": "https://scrapes.dev2.getadology.ai/search/twitter/Spectral/images/ee53ede0af7daf0c5044be306cb6b21a3c5a44db6be8db1a0af7f394d553dffa.jpg",
-      "topic": "Negative/Hate Speech"    },
-    {
-     "id": 4,
-      "user": "Twitter User",
-      "text": "Spectral is a top-notch movie. 🎥 https://t.co/JCuBIPc3Vi",
-      "sentiment": "positive",
-      "image": "https://scrapes.dev2.getadology.ai/search/twitter/Spectral/videos/b6b78987c0e1fa014751670405a02e2361b7ed77b73977d70281ddc6422f077c.mp4",
-      "topic": "Product & Brand Praise"
+      "topic": "Conspiracy & Fringe"
     },
     {
-    "id": 5,
-      "user": "Twitter User",
-      "text": "@TeamYouTube @TeamYouTube so why is this allowed?? this youtube channel Spectral Paranormal is openly bragging about using your copyright strike system to teach lessons against another channel Beardo Gets Scared by filing malicious strikes. https://t.co/6L7ossIXXz",
+      "id": 4,
+      "user": "Sourcegraph News",
+      "text": ".@AmpCode is becoming a separate company. We're spinning out of @Sourcegraph to become an independent research lab. Our goal: Let software builders harness the full power of artificial intelligence.",
+      "sentiment": "neutral",
+      "image": "https://scrapes.dev2.getadology.ai/search/twitter/Sourcegraph/images/2deeaf0122962fac9a5cbe88ce7d92323472c5186751d6932a74a77a23c892bf.jpg",
+      "topic": "AI Code Editors & Agents"
+    },
+    {
+      "id": 5,
+      "user": "Meme Poster",
+      "text": "I’ve done it twin. I’ve turned us into spectral deer. Twin run they are hunting us twin.",
+      "sentiment": "neutral",
+      "image": "https://scrapes.dev2.getadology.ai/search/twitter/Spectral/images/889a5d2e6b74f800b4a8c9e9a3528e51fde8d5af7d8fa2bd57e93315f99c41cc.jpg",
+      "topic": "Memes & Gaming"
+    },
+    {
+      "id": 6,
+      "user": "Design Daily",
+      "text": "Rivet is our love letter to the design community. It’s a visual editor that helps designers translate precise UI changes into production code. We're launching tomorrow morning.",
+      "sentiment": "positive",
+      "image": "https://scrapes.dev2.getadology.ai/search/twitter/Visual%20code%20editor/videos/efcd8e21908baf9d3ebc557604aae97c4cd1c737a7f9cf85d28c1181c2fe8f9c.mp4",
+      "topic": "Dev Tools (VS Code/Extensions)"
+    },
+    {
+      "id": 7,
+      "user": "AI Research",
+      "text": "Baek et al., 'SONIC: Spectral Optimization of Noise for Inpainting with Consistency'. Initial seed noise matters. And you can optimize it without any backprop through your denoiser via good-ol linearization.",
+      "sentiment": "positive",
+      "image": "https://scrapes.dev2.getadology.ai/search/twitter/Spectral/videos/507271cd976f130442a6de7a0fa9605c114709bc006879d1d774ddde8988a52a.mp4",
+      "topic": "Spectral Science & Optics"
+    },
+    {
+      "id": 8,
+      "user": "Angry Gamer",
+      "text": "so why is this allowed?? this youtube channel Spectral Paranormal is openly bragging about using your copyright strike system to teach 'lessons' against another channel Beardo Gets Scared.",
       "sentiment": "negative",
       "image": "https://scrapes.dev2.getadology.ai/search/twitter/Spectral/images/482c419f0b2e6bc3adc8b477b41322f36fbc347fd28a7ba94f6d870fa39765ed.jpg",
-      "topic": "Negative/Hate Speech"
+      "topic": "Conspiracy & Fringe"
+    },
+    {
+      "id": 9,
+      "user": "Tech Insider",
+      "text": "Quinn Slack, Sourcegraph’s CEO...said that Google’s Gemini 3 model outperformed Anthropic’s Claude Sonnet 4.5 by 17 percentage points in the company’s internal evaluations.",
+      "sentiment": "neutral",
+      "image": "https://scrapes.dev2.getadology.ai/search/twitter/Sourcegraph/images/ce5950c924eebf9feb7df81c0feea2a437762e2fc1a7179f01ddce62ec5c8e0b.jpg",
+      "topic": "AI Code Editors & Agents"
+    },
+    {
+      "id": 10,
+      "user": "VS Code Tips",
+      "text": "Visual Studio Code 1.106 introduces Agent HQ for AI sessions with GitHub Copilot and OpenAI Codex integrations, upgrades security and AI trust, improves the editor experience.",
+      "sentiment": "positive",
+      "image": "https://scrapes.dev2.getadology.ai/search/twitter/Visual%20code%20editor/images/7f238abc3a7e8a17ff1e54b43d9e3296594cdabf1cabdce7dde2187d6bba999f.jpg",
+      "topic": "Dev Tools (VS Code/Extensions)"
+    },
+    {
+      "id": 11,
+      "user": "Space Fan",
+      "text": "finally friday, more free time for experimenting with something new: Spectral galaxy 😁 #creativecoding",
+      "sentiment": "positive",
+      "image": "https://scrapes.dev2.getadology.ai/search/twitter/Spectral/videos/e6825566bd1c944d35541c015f5c0c3cb9414317f78abfe2ab92d7aac41dd582.mp4",
+      "topic": "Spectral Science & Optics"
+    },
+    {
+      "id": 12,
+      "user": "Hardware Geek",
+      "text": "At Philips, we pioneer in the imaging space. Watch the unveiling of the industry’s first helium-free premium 3.0T MRI platform, Blueseal Horizon, and Verida, the world’s first AI-powered spectral-detector CT.",
+      "sentiment": "positive",
+      "image": "https://scrapes.dev2.getadology.ai/search/twitter/Spectral/videos/2456bddd4c66558a32422f2b1a580d2ad910d5adaa62a12c2da3b6f43bb94670.mp4",
+      "topic": "Spectral Science & Optics"
     }
   ]
 }
