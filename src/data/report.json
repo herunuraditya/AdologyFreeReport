@@ -10,7 +10,7 @@
     "shareOfVoice": 15,
     "engagementRate": 4.1
   },
-  "executiveSummary": "Analysis of the term 'Spectral' reveals a predominantly neutral conversation, centered on technical topics like AI, computer graphics, and scientific research. Positive sentiment is driven by specific product announcements and media praise, while a small segment of negative mentions includes conspiracy theories, user complaints, and hate speech. The overall risk level is low, with sentiment nearly balanced between positive and negative drivers.",
+  "executiveSummary": "Analysis of the term 'Spectral' reveals a predominantly neutral conversation, centered on technical topics like AI, computer graphics, and scientific research. Positive sentiment is driven by specific product announcements.",
   "topicBreakdown": [
     { "topic": "AI & Computer Graphics", "count": 15, "sentiment": "neutral" },
     { "topic": "Art & Creative Projects", "count": 12, "sentiment": "neutral" },
@@ -22,6 +22,27 @@
     { "name": "Positive", "value": 10, "color": "#10b981" },
     { "name": "Neutral", "value": 52, "color": "#64748b" },
     { "name": "Negative", "value": 11, "color": "#ef4444" }
+  ],
+  "positioningAnalysis": [
+    { "category": "Innovation", "value": 85, "color": "#8b5cf6" },
+    { "category": "Performance", "value": 70, "color": "#ec4899" },
+    { "category": "Value", "value": 45, "color": "#10b981" },
+    { "category": "Community", "value": 60, "color": "#f59e0b" },
+    { "category": "Trust", "value": 55, "color": "#3b82f6" }
+  ],
+  "voiceAnalysis": [
+    { "attribute": "Witty", "A": 65, "fullMark": 100 },
+    { "attribute": "Friendly", "A": 40, "fullMark": 100 },
+    { "attribute": "Educational", "A": 85, "fullMark": 100 },
+    { "attribute": "Bold", "A": 50, "fullMark": 100 },
+    { "attribute": "Authentic", "A": 75, "fullMark": 100 },
+    { "attribute": "Sophisticated", "A": 90, "fullMark": 100 }
+  ],
+  "complexityAnalysis": [
+    { "frequency": 20, "complexity": 80, "z": 200, "label": "Technical Papers" },
+    { "frequency": 80, "complexity": 30, "z": 500, "label": "Memes" },
+    { "frequency": 45, "complexity": 50, "z": 300, "label": "User Reviews" },
+    { "frequency": 60, "complexity": 60, "z": 400, "label": "Tutorials" }
   ],
   "rawPosts": [
     {
