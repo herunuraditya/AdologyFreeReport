@@ -10,7 +10,25 @@
     "shareOfVoice": 35,
     "engagementRate": 8.4
   },
-  "executiveSummary": "Analysis across three key pillars (Spectral, Visual Code Editors, Sourcegraph) reveals a massive shift towards AI-native development environments. While 'Spectral' conversation is fragmented between high-end optics/physics and niche memes, the 'Visual Code Editor' landscape is being disrupted by Google's new Antigravity and AI agents. Sourcegraph's spin-off of AmpCode signals a strategic pivot in the industry. Risk factors are moderate, driven primarily by conspiracy theories within the 'Spectral' search term (NASA/UFO narratives) and intense competitor sentiment in the dev tools space.",
+  "insights": {
+    "overview": {
+      "summary": "Sentimen positif mendominasi (65%) berkat peluncuran alat AI coding baru, namun ada friksi negatif (10%) dari teori konspirasi terkait istilah 'Spectral'.",
+      "suggestion": "Kapitalisasi momentum peluncuran produk dengan konten teknis mendalam. Abaikan narasi konspirasi kecuali jika eskalasi risiko meningkat."
+    },
+    "positioning": {
+      "summary": "Brand dipersepsikan sangat kuat di pilar 'Innovation' (92/100) dan 'Community' (85/100), memvalidasi strategi fokus pada early-adopter.",
+      "suggestion": "Skor 'Value' relatif rendah (50/100). Pertimbangkan untuk mengkomunikasikan ROI atau efisiensi biaya dalam kampanye berikutnya untuk menjangkau audiens yang lebih luas."
+    },
+    "voice": {
+      "summary": "Tone suara brand sangat 'Technical' (95) dan 'Visionary' (80), namun kurang 'Authentic' (50) dan 'Chaos' (40), terkesan terlalu korporat.",
+      "suggestion": "Eksperimen dengan konten 'raw' atau behind-the-scenes untuk meningkatkan skor 'Authentic'. Developer cenderung lebih percaya pada komunikasi yang transparan dan tidak terlalu terpoles."
+    },
+    "complexity": {
+      "summary": "Topik kompleks seperti 'CUDA Kernels' memiliki frekuensi rendah tapi engagement tinggi. Topik ringan (Memes) memiliki volume tinggi tapi engagement dangkal.",
+      "suggestion": "Gunakan strategi 'Barbell': Pertahankan konten teknis berat untuk kredibilitas, tapi gunakan meme/konten ringan sebagai pintu masuk (funnel) untuk audiens baru."
+    }
+  },
+  "executiveSummary": "Analysis across three key pillars (Spectral, Visual Code Editors, Sourcegraph) reveals a massive shift towards AI-native development environments. While 'Spectral' conversation is fragmented between high-end optics/physics and niche memes, the 'Visual Code Editor' landscape is being disrupted by Google's new Antigravity and AI agents.",
   "topicBreakdown": [
     { "topic": "AI Code Editors & Agents", "count": 450, "sentiment": "positive" },
     { "topic": "Spectral Science & Optics", "count": 120, "sentiment": "neutral" },
@@ -93,54 +111,6 @@
       "sentiment": "positive",
       "image": "https://scrapes.dev2.getadology.ai/search/twitter/Visual%20code%20editor/videos/efcd8e21908baf9d3ebc557604aae97c4cd1c737a7f9cf85d28c1181c2fe8f9c.mp4",
       "topic": "Dev Tools (VS Code/Extensions)"
-    },
-    {
-      "id": 7,
-      "user": "AI Research",
-      "text": "Baek et al., 'SONIC: Spectral Optimization of Noise for Inpainting with Consistency'. Initial seed noise matters. And you can optimize it without any backprop through your denoiser via good-ol linearization.",
-      "sentiment": "positive",
-      "image": "https://scrapes.dev2.getadology.ai/search/twitter/Spectral/videos/507271cd976f130442a6de7a0fa9605c114709bc006879d1d774ddde8988a52a.mp4",
-      "topic": "Spectral Science & Optics"
-    },
-    {
-      "id": 8,
-      "user": "Angry Gamer",
-      "text": "so why is this allowed?? this youtube channel Spectral Paranormal is openly bragging about using your copyright strike system to teach 'lessons' against another channel Beardo Gets Scared.",
-      "sentiment": "negative",
-      "image": "https://scrapes.dev2.getadology.ai/search/twitter/Spectral/images/482c419f0b2e6bc3adc8b477b41322f36fbc347fd28a7ba94f6d870fa39765ed.jpg",
-      "topic": "Conspiracy & Fringe"
-    },
-    {
-      "id": 9,
-      "user": "Tech Insider",
-      "text": "Quinn Slack, Sourcegraph’s CEO...said that Google’s Gemini 3 model outperformed Anthropic’s Claude Sonnet 4.5 by 17 percentage points in the company’s internal evaluations.",
-      "sentiment": "neutral",
-      "image": "https://scrapes.dev2.getadology.ai/search/twitter/Sourcegraph/images/ce5950c924eebf9feb7df81c0feea2a437762e2fc1a7179f01ddce62ec5c8e0b.jpg",
-      "topic": "AI Code Editors & Agents"
-    },
-    {
-      "id": 10,
-      "user": "VS Code Tips",
-      "text": "Visual Studio Code 1.106 introduces Agent HQ for AI sessions with GitHub Copilot and OpenAI Codex integrations, upgrades security and AI trust, improves the editor experience.",
-      "sentiment": "positive",
-      "image": "https://scrapes.dev2.getadology.ai/search/twitter/Visual%20code%20editor/images/7f238abc3a7e8a17ff1e54b43d9e3296594cdabf1cabdce7dde2187d6bba999f.jpg",
-      "topic": "Dev Tools (VS Code/Extensions)"
-    },
-    {
-      "id": 11,
-      "user": "Space Fan",
-      "text": "finally friday, more free time for experimenting with something new: Spectral galaxy 😁 #creativecoding",
-      "sentiment": "positive",
-      "image": "https://scrapes.dev2.getadology.ai/search/twitter/Spectral/videos/e6825566bd1c944d35541c015f5c0c3cb9414317f78abfe2ab92d7aac41dd582.mp4",
-      "topic": "Spectral Science & Optics"
-    },
-    {
-      "id": 12,
-      "user": "Hardware Geek",
-      "text": "At Philips, we pioneer in the imaging space. Watch the unveiling of the industry’s first helium-free premium 3.0T MRI platform, Blueseal Horizon, and Verida, the world’s first AI-powered spectral-detector CT.",
-      "sentiment": "positive",
-      "image": "https://scrapes.dev2.getadology.ai/search/twitter/Spectral/videos/2456bddd4c66558a32422f2b1a580d2ad910d5adaa62a12c2da3b6f43bb94670.mp4",
-      "topic": "Spectral Science & Optics"
     }
   ]
 }
